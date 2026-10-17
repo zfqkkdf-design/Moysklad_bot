@@ -57,10 +57,10 @@ class StockSalesReport:
             sales_quantity = sum(i.get('quantity') for i in sales.get('series'))
 
             if sales_sum != 0 and sales_quantity != 0:
-                return f"За період c {self.moment_from} по {self.moment_to}\nчеков: {sales_quantity} шт., " \
+                return f"За период c {self.moment_from} по {self.moment_to}\nчеков: {sales_quantity} шт., " \
                        f"на сумму {sales_sum} руб."
             else:
-                return f"За період c {self.moment_from} по {self.moment_to} продаж не було"
+                return f"За период c {self.moment_from} по {self.moment_to} продаж не было"
 
         except Exception as ex:
             print(f'Проблема с подключением к API МойСклад: {ex}')
